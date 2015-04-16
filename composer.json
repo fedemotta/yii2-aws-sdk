@@ -11,6 +11,7 @@
         }
     ],
     "require": {
+        "aws/aws-sdk-php": "*",
         "yiisoft/yii2": "*"
     },
     "autoload": {
