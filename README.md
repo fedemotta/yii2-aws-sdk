@@ -25,7 +25,17 @@ to the require section of your `composer.json` file.
 Usage
 -----
 
-Once the extension is installed, simply use it in your code by  :
+To use this extension, simply add the following code in your application configuration:
 
 ```php
-<?= \fedemotta\aws\AutoloadExample::widget(); ?>```
+return [
+    //....
+    'components' => [
+        'awssdk' => [
+            'class' => 'fedemotta/awssdk/AwsSdk',
+            'key' => 'yourkey',
+            'secret' => 'yoursecret',
+        ],
+    ],
+];
+```
