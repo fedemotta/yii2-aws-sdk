@@ -28,6 +28,11 @@ class AwsSdk extends Component
      */
     public $secret = null;
     
+    /*
+     * @var string specifies the AWS region
+     */
+    public $region = null;
+    
     /**
      * @var AWS SDK instance
      */
@@ -49,6 +54,6 @@ class AwsSdk extends Component
      */
     public function setAwsSdk()
     {
-        $this->_awssdk = Aws::factory([$this->key,$this->secret]);
+        $this->_awssdk = Aws::factory([$this->key,$this->secret,$this->region]);
     }
 }

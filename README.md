@@ -35,6 +35,7 @@ return [
             'class' => 'fedemotta/awssdk/AwsSdk',
             'key' => 'yourkey',
             'secret' => 'yoursecret',
+            'region' => 'yourregion',
         ],
     ],
 ];
