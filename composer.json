@@ -1,0 +1,21 @@
+{
+    "name": "fedemotta/yii2-aws-sdk",
+    "description": "This extension provides the AWS SDK integration for the Yii2 framework",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension","aws","amazon","sdk","s3","ec2","dynamodb","cloud","glacier"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Federico Nicolás Motta",
+            "email": "fedemotta@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "fedemotta\\aws\\": ""
+        }
+    }
+}
