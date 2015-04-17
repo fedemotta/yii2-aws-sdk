@@ -41,7 +41,7 @@ return [
 ];
 ```
 
-Get all balancer names from AWS:
+Getting all balancer names from AWS:
 
 ```php
 $awssdk = Yii::$app->awssdk->getAwsSdk();
