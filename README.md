@@ -40,3 +40,18 @@ return [
     ],
 ];
 ```
+
+Get all balancer names from AWS:
+
+```php
+$awssdk = Yii::$app->awssdk->getAwsSdk();
+$elb = $awssdk->get('elasticloadbalancing');
+$load_balancers = $elb->describeLoadBalancers()->toArray();
+if (isset($load_balancers['LoadBalancerDescriptions'])){
+    foreach ($load_balancers['LoadBalancerDescriptions'] as $balancer){
+        if (isset($balancer['LoadBalancerName'])){ 
+            echo $balancer['LoadBalancerName'];
+        }
+    }
+}
+```
