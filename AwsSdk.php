@@ -4,6 +4,7 @@
  * @author Federico Nicolás Motta <fedemotta@gmail.com>
  * @license http://opensource.org/licenses/mit-license.php The MIT License (MIT)
  * @package yii2-aws-sdk
+ * @version 1.0.1
  */
 namespace fedemotta\awssdk;
 use yii\base\Component;
@@ -12,6 +13,7 @@ use Aws\Common\Aws;
 /**
  * Yii2 component wrapping of the AWS SDK for easy configuration
  * @author Federico Nicolás Motta <fedemotta@gmail.com>
+ * @since 1.0
  */
 class AwsSdk extends Component
 {
