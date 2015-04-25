@@ -5,6 +5,10 @@
     "minimum-stability": "stable",
     "keywords": ["yii2","extension","aws","amazon","sdk","s3","ec2","dynamodb","cloud","glacier"],
     "license": "MIT",
+    "support": {
+        "issues": "https://github.com/fedemotta/yii2-aws-sdk/issues?state=open",
+        "source": "https://github.com/fedemotta/yii2-aws-sdk"
+    },
     "authors": [
         {
             "name": "Federico Nicolás Motta",
