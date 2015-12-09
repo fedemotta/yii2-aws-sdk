@@ -35,6 +35,11 @@ class AwsSdk extends Component
      */
     public $version = null;
     
+    /*
+     * @var array specifies extra params
+     */
+    public $extra = [];
+    
     /**
      * @var AWS SDK instance
      */
@@ -56,9 +61,9 @@ class AwsSdk extends Component
      */
     public function setAwsSdk()
     {
-        $this->_awssdk = Aws::factory([ 'key'=>$this->key,
+        $this->_awssdk = Aws::factory(array_merge([ 'key'=>$this->key,
                                         'secret'=>$this->secret,
                                         'region'=>$this->region,
-                                        'version'=>$this->version]);
+                                        'version'=>$this->version],$this->extra));
     }
 }
