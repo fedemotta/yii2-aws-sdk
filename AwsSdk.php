@@ -61,7 +61,7 @@ class AwsSdk extends Component
      */
     public function setAwsSdk()
     {
-        $this->_awssdk = Aws::factory(array_merge([ 'key'=>$this->key,
+        $this->_awssdk = new Aws\Sdk(array_merge([ 'key'=>$this->key,
                                         'secret'=>$this->secret,
                                         'region'=>$this->region,
                                         'version'=>$this->version],$this->extra));
