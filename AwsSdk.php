@@ -51,7 +51,7 @@ class AwsSdk extends Component
      */
     public function getAwsSdk()
     {
-        if (empty($this->_awssdk) || !$this->_awssdk instanceof Aws\Common\Aws) {
+        if (empty($this->_awssdk) || !$this->_awssdk instanceof Aws\Aws) {
             $this->setAwsSdk();
         }
         return $this->_awssdk;
