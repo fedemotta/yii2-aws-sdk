@@ -7,7 +7,7 @@
  */
 namespace fedemotta\awssdk;
 use yii\base\Component;
-use Aws\Common\Aws;
+use Aws\Sdk;
 
 /**
  * Yii2 component wrapping of the AWS SDK for easy configuration
@@ -51,7 +51,7 @@ class AwsSdk extends Component
      */
     public function getAwsSdk()
     {
-        if (empty($this->_awssdk) || !$this->_awssdk instanceof Aws\Aws) {
+        if (empty($this->_awssdk) || !$this->_awssdk instanceof Aws\Sdk) {
             $this->setAwsSdk();
         }
         return $this->_awssdk;
