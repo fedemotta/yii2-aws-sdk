@@ -1,6 +1,6 @@
 AWS SDK for Yii2 - Use Amazon Web Services in your Yii2 project
 ===============================================================
-This extension provides the AWS SDK integration for the Yii2 framework
+This extension provides the AWS SDK 3 integration for the Yii2 framework
 
 [![Latest Stable Version](https://poser.pugx.org/fedemotta/yii2-aws-sdk/v/stable)](https://packagist.org/packages/fedemotta/yii2-aws-sdk) [![Total Downloads](https://poser.pugx.org/fedemotta/yii2-aws-sdk/downloads)](https://packagist.org/packages/fedemotta/yii2-aws-sdk) [![Latest Unstable Version](https://poser.pugx.org/fedemotta/yii2-aws-sdk/v/unstable)](https://packagist.org/packages/fedemotta/yii2-aws-sdk) [![License](https://poser.pugx.org/fedemotta/yii2-aws-sdk/license)](https://packagist.org/packages/fedemotta/yii2-aws-sdk)
 
@@ -23,6 +23,9 @@ or add
 
 to the require section of your `composer.json` file.
 
+```
+Note: You can still use AWS version 2 if you specify fedemotta/yii2-aws-sdk "1.*"
+```
 
 Usage
 -----
@@ -37,7 +40,8 @@ return [
             'class' => 'fedemotta/awssdk/AwsSdk',
             'key' => 'yourkey',
             'secret' => 'yoursecret',
-            'region' => 'yourregion',
+            'region' => 'yourregion', //i.e.: 'us-east-1'
+            'version' => 'yourversion', //i.e.: 'latest'
         ],
     ],
 ];

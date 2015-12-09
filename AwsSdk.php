@@ -30,6 +30,11 @@ class AwsSdk extends Component
      */
     public $region = null;
     
+    /*
+     * @var string specifies the AWS version
+     */
+    public $version = null;
+    
     /**
      * @var AWS SDK instance
      */
@@ -53,6 +58,7 @@ class AwsSdk extends Component
     {
         $this->_awssdk = Aws::factory([ 'key'=>$this->key,
                                         'secret'=>$this->secret,
-                                        'region'=>$this->region]);
+                                        'region'=>$this->region,
+                                        'version'=>$this->version]);
     }
 }
