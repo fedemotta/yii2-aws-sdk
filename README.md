@@ -53,7 +53,7 @@ Getting all balancer names from AWS:
 
 ```php
 $awssdk = Yii::$app->awssdk->getAwsSdk();
-$elb = $awssdk->get('elasticloadbalancing');
+$elb = $awssdk->createElasticloadbalancing();
 $load_balancers = $elb->describeLoadBalancers()->toArray();
 if (isset($load_balancers['LoadBalancerDescriptions'])){
     foreach ($load_balancers['LoadBalancerDescriptions'] as $balancer){
