@@ -38,7 +38,7 @@ return [
     'components' => [
         'awssdk' => [
             'class' => 'fedemotta\awssdk\AwsSdk',
-            'credentials' => [
+            'credentials' => [ //you can use a different method to grant access
                 'key' => 'your-aws-key',
                 'secret' => 'your-aws-secret',
             ],
@@ -52,8 +52,8 @@ return [
 Getting all balancer names from AWS:
 
 ```php
-$awssdk = Yii::$app->awssdk->getAwsSdk();
-$elb = $awssdk->createElasticloadbalancing();
+$aws = Yii::$app->awssdk->getAwsSdk();
+$elb = $aws->createElasticloadbalancing();
 $load_balancers = $elb->describeLoadBalancers()->toArray();
 if (isset($load_balancers['LoadBalancerDescriptions'])){
     foreach ($load_balancers['LoadBalancerDescriptions'] as $balancer){
@@ -62,4 +62,22 @@ if (isset($load_balancers['LoadBalancerDescriptions'])){
         }
     }
 }
+```
+
+Download an object from S3:
+```php
+$aws = Yii::$app->awssdk->getAwsSdk();
+//specify the region if it is different than the main configuration region
+$s3 = $aws->createS3(['Region'=>'sa-east-1']);
+$result = $s3->listObjects(['Bucket' => 'your-bucket-id',"Prefix" => "your-path"])->toArray();
+//get the last object from s3
+$object = end($result['Contents']);
+$key = $object['Key'];
+$file = $s3->getObject([
+    'Bucket' => 'your-bucket-id',
+    'Key' => $key
+]);
+//download the file
+header('Content-Type: ' . $file['ContentType']);
+echo $file['Body'];
 ```
