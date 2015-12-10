@@ -37,11 +37,13 @@ return [
     //....
     'components' => [
         'awssdk' => [
-            'class' => 'fedemotta/awssdk/AwsSdk',
-            'key' => 'yourkey',
-            'secret' => 'yoursecret',
-            'region' => 'yourregion', //i.e.: 'us-east-1'
-            'version' => 'yourversion', //i.e.: 'latest'
+            'class' => 'fedemotta\awssdk\AwsSdk',
+            'credentials' => [
+                'key' => 'your-aws-key',
+                'secret' => 'your-aws-secret',
+            ],
+            'region' => 'your-aws-region', //i.e.: 'us-east-1'
+            'version' => 'your-aws-version', //i.e.: 'latest'
         ],
     ],
 ];
