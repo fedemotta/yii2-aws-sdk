@@ -7,7 +7,7 @@
  */
 namespace fedemotta\awssdk;
 use yii\base\Component;
-use Aws\Sdk;
+use Aws;
 
 /**
  * Yii2 component wrapping of the AWS SDK for easy configuration
@@ -16,14 +16,9 @@ use Aws\Sdk;
 class AwsSdk extends Component
 {
     /*
-     * @var string specifies the AWS key
+     * @var array specifies the AWS credentials
      */
-    public $key = null;
-    
-    /*
-     * @var string specifies the AWS secret
-     */
-    public $secret = null;
+    public $credentials = [];
     
     /*
      * @var string specifies the AWS region
@@ -61,9 +56,10 @@ class AwsSdk extends Component
      */
     public function setAwsSdk()
     {
-        $this->_awssdk = new Aws\Sdk(array_merge([ 'key'=>$this->key,
-                                        'secret'=>$this->secret,
+        $this->_awssdk = new Aws\Sdk(array_merge([ 
+                                        'credentials' => $this->credentials,
                                         'region'=>$this->region,
-                                        'version'=>$this->version],$this->extra));
+                                        'version'=>$this->version
+                                    ],$this->extra));
     }
 }
