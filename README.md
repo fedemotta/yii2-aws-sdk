@@ -66,9 +66,11 @@ if (isset($load_balancers['LoadBalancerDescriptions'])){
 
 Download an object from S3:
 ```php
-$aws = Yii::$app->awssdk->getAwsSdk();
 //specify the region if it is different than the main configuration region
-$s3 = $aws->createS3(['Region'=>'sa-east-1']);
+Yii::$app->awssdk->region = 'sa-east-1';
+$aws = Yii::$app->awssdk->getAwsSdk();
+//use s3
+$s3 = $aws->createS3();
 $result = $s3->listObjects(['Bucket' => 'your-bucket-id',"Prefix" => "your-path"])->toArray();
 //get the last object from s3
 $object = end($result['Contents']);
