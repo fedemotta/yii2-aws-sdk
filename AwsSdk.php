@@ -36,13 +36,13 @@ class AwsSdk extends Component
     public $extra = [];
     
     /**
-     * @var AWS SDK instance
+     * @var Aws\Sdk instance
      */
     protected $_awssdk;
     
     /**
      * Initializes (if needed) and fetches the AWS SDK instance
-     * @return Aws instance
+     * @return Aws\Sdk instance
      */
     public function getAwsSdk()
     {
